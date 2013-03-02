@@ -31,6 +31,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang_iso}">
 	<head>
 		<title>{$meta_title|escape:'htmlall':'UTF-8'}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 {if isset($meta_description) AND $meta_description}
 		<meta name="description" content="{$meta_description|escape:html:'UTF-8'}" />
 {/if}
@@ -72,24 +73,26 @@
 			<p>{l s='You cannot place a new order from your country.'} <span class="bold">{$geolocation_country}</span></p>
 		</div>
 		{/if}
-		<div id="page" class="container_9 clearfix">
+		<div id="page" class="container-fluid">
 
 			<!-- Header -->
-			<div id="header" class="grid_9 alpha omega">
-				<a id="header_logo" href="{$base_dir}" title="{$shop_name|escape:'htmlall':'UTF-8'}">
-					<img class="logo" src="{$logo_url}" alt="{$shop_name|escape:'htmlall':'UTF-8'}" {if $logo_image_width}width="{$logo_image_width}"{/if} {if $logo_image_height}height="{$logo_image_height}" {/if} />
-				</a>
-				<div id="header_right" class="grid_6 omega">
+			<div id="header" class="row-fluid">
+				<div class="span3">
+					<a id="header_logo" href="{$base_dir}" title="{$shop_name|escape:'htmlall':'UTF-8'}">
+						<img class="logo" src="{$logo_url}" alt="{$shop_name|escape:'htmlall':'UTF-8'}" {if $logo_image_width}width="{$logo_image_width}"{/if} {if $logo_image_height}height="{$logo_image_height}" {/if} />
+					</a>
+				</div>
+				<div class="span9">
 					{$HOOK_TOP}
 				</div>
 			</div>
 
-			<div id="columns" class="grid_9 alpha omega clearfix">
+			<div id="columns" class="row-fluid">
 				<!-- Left -->
-				<div id="left_column" class="column grid_2 alpha">
+				<div id="left_column" class="span3">
 					{$HOOK_LEFT_COLUMN}
 				</div>
 
 				<!-- Center -->
-				<div id="center_column" class=" grid_5">
+				<div id="center_column" class="span6">
 	{/if}

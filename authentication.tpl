@@ -159,23 +159,23 @@ $(function(){ldelim}
 			<div class="form_content clearfix">
 				<p class="title_block">{l s='Enter your e-mail address to create an account'}.</p>
 				<div class="error" id="create_account_error" style="display:none"></div>
-				<p class="text">
+				<!--p class="text"-->
 					<label for="email_create">{l s='E-mail address'}</label>
-					<span><input type="text" id="email_create" name="email_create" value="{if isset($smarty.post.email_create)}{$smarty.post.email_create|stripslashes}{/if}" class="account_input" /></span>
-				</p>
-				<p class="submit">
+					<span><input type="text" id="email_create" name="email_create" value="{if isset($smarty.post.email_create)}{$smarty.post.email_create|stripslashes}{/if}" class="" /></span>
+				<!--/p-->
+				<!--p class="submit"-->
 					{if isset($back)}<input type="hidden" class="hidden" name="back" value="{$back|escape:'htmlall':'UTF-8'}" />{/if}
-					<input type="button" id="SubmitCreate" name="SubmitCreate" class="button_large" value="{l s='Create your account'}" />
+					<input type="button" id="SubmitCreate" name="SubmitCreate" class="btn" value="{l s='Create your account'}" />
 					<input type="hidden" class="hidden" name="SubmitCreate" value="{l s='Create your account'}" />
-				</p>
+				<!--/p-->
 			</div>
 		</fieldset>
 	</form>
 
-	<form action="{$link->getPageLink('authentication', true)}" method="post" id="login_form" class="std">
+	<!--form action="{$link->getPageLink('authentication', true)}" method="post" id="login_form" class="std">
 		<fieldset>
 			<h3>{l s='Already registered?'}</h3>
-			<div class="form_content clearfix">
+			<div class="">
 				<p class="text">
 					<label for="email">{l s='E-mail address'}</label>
 					<span><input type="text" id="email" name="email" value="{if isset($smarty.post.email)}{$smarty.post.email|stripslashes}{/if}" class="account_input" /></span>
@@ -187,11 +187,48 @@ $(function(){ldelim}
 				<p class="lost_password"><a href="{$link->getPageLink('password')}">{l s='Forgot your password?'}</a></p>
 				<p class="submit">
 					{if isset($back)}<input type="hidden" class="hidden" name="back" value="{$back|escape:'htmlall':'UTF-8'}" />{/if}
-					<input type="submit" id="SubmitLogin" name="SubmitLogin" class="button" value="{l s='Log in'}" />
+					<input type="submit" id="SubmitLogin" name="SubmitLogin" class="btn" value="{l s='Log in'}" />
 				</p>
 			</div>
 		</fieldset>
-	</form>
+	</form-->
+
+
+  	<form action="{$link->getPageLink('authentication', true)}" method="post" id="login_form" class="form-horizontal std">
+	   	<fieldset>
+	      <h3>{l s='Already registered?'}</h3>
+	    <div class="control-group">
+
+	          <!-- Text input-->
+	          <label class="control-label" for="input01">E-mail адрес</label>
+	          <div class="controls">
+	            <input placeholder="" class="input-xlarge" type="text">
+	            <p class="help-block"></p>
+	          </div>
+	        </div>
+
+	    <div class="control-group">
+
+	          <!-- Text input-->
+	          <label class="control-label" for="input01">Password</label>
+	          <div class="controls">
+	            <input placeholder="" class="input-xlarge" type="text">
+	            <p class="help-block"></p>
+	          </div>
+	        </div>
+
+	    <div class="control-group">
+	          <label class="control-label"></label>
+
+	          <!-- Button -->
+	          <div class="controls">
+	            <button class="btn btn-default">Button</button>
+	          </div>
+	        </div>
+
+	    </fieldset>
+    </form>
+
 
 	{if isset($inOrderProcess) && $inOrderProcess && $PS_GUEST_CHECKOUT_ENABLED}
 	<form action="{$link->getPageLink('authentication', true, NULL, "back=$back")}" method="post" id="new_account_form" class="std clearfix">
