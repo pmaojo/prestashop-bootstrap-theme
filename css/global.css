@@ -285,7 +285,11 @@ table.table_block  td {
 }
 
 /* BLOCK .block ******************************************************************************** */
-.block {margin-bottom:20px}
+.block {
+	margin-bottom:20px;
+	background-color: #FAFAFA;
+	border-radius: 4px 4px 0 0;
+}
 #footer .block {margin-bottom:0}
 	.block .title_block, .block h4 {
 		padding:6px 11px;
@@ -296,6 +300,7 @@ table.table_block  td {
 		background:#383838;
 		text-align:left;
 		font-weight: bold;
+		border-radius: 4px 4px 0 0;
 	}
 		.block .title_block a, .block h4 a {color:#fff}
 	.block ul {list-style-type:none}
