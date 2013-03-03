@@ -131,14 +131,14 @@ a, a:active, a:visited {
 
 	
 /* HACK IOS ipad, iphone */
-input[type="text"], input[type="email"], input[type="search"], input[type="password"], input[type="submit"], input[type="image"] {
+/*input[type="text"], input[type="email"], input[type="search"], input[type="password"], input[type="submit"], input[type="image"] {
 	-webkit-appearance:none;
 	-moz-appearance:none;
 	appearance:none;
 	-webkit-border-radius:0px !important;
 	-moz-border-radius:0px !important;
 	border-radius:0px !important;
-}
+}*/
 	
 /*buttons ************************************************************************************** */
 input.button_mini, input.button_small, input.button, input.button_large,

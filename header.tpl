@@ -73,7 +73,7 @@
 			<p>{l s='You cannot place a new order from your country.'} <span class="bold">{$geolocation_country}</span></p>
 		</div>
 		{/if}
-		<div id="page" class="container-fluid">
+		<div id="page" class="container-fluid" style="padding-top:20px;">
 
 			<!-- Header -->
 			<div id="header" class="row-fluid">
