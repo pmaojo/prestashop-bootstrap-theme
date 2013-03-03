@@ -438,6 +438,7 @@ var fieldRequired = '{l s='Please fill in all required fields, then save the cus
 					<span></span>
 					<input type="submit" name="Submit" value="{l s='Add to cart'}" class="exclusive" />
 				</p>
+				<button class="btn ajax-add2cart-button" data-loading-text="Loading..."><i class="icon-shopping-cart"></i>{l s='Add to cart'}</button>
 			{/if}
 			{if isset($HOOK_PRODUCT_ACTIONS) && $HOOK_PRODUCT_ACTIONS}{$HOOK_PRODUCT_ACTIONS}{/if}
 
