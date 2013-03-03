@@ -23,7 +23,7 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 <div class="pagenotfound">
-	<h1>{l s='Page not available'}</h1>
+	<h3>{l s='Page not available'}</h3>
 
 	<p>
 		{l s='We\'re sorry, but the Web address you entered is no longer available'}
