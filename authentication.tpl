@@ -71,7 +71,7 @@ $(function(){ldelim}
 {/if}
 </script>
 
-<h1>{if !isset($email_create)}{l s='Log in'}{else}{l s='Create your account'}{/if}</h1>
+<h3>{if !isset($email_create)}{l s='Log in'}{else}{l s='Create your account'}{/if}</h3>
 
 {include file="$tpl_dir./errors.tpl"}
 {assign var='stateExist' value=false}
@@ -82,17 +82,19 @@ $(function(){ldelim}
 		// Retrocompatibility with 1.4
 		if (typeof baseUri === "undefined" && typeof baseDir !== "undefined")
 		baseUri = baseDir;
-		$('#create-account_form').submit(function(){
+		$('#user-create-form').submit(function(e){
+			e.preventDefault();
 			submitFunction();
 			return false;
 		});
-		$('#SubmitCreate').click(function(){
-			submitFunction();
-		});
+		// $('#new-user-create').click(function(){
+		// 	submitFunction();
+		// });
 	});
 	function submitFunction()
 	{
-		$('#create_account_error').html('').hide();
+		var form = $('#user-create-form');
+		// form.html('').hide();
 		//send the ajax request to the server
 		$.ajax({
 			type: 'POST',
@@ -104,7 +106,7 @@ $(function(){ldelim}
 				controller: 'authentication',
 				SubmitCreate: 1,
 				ajax: true,
-				email_create: $('#email_create').val(),
+				email_create: form.find('.reg-email').val(),
 				token: token
 			},
 			success: function(jsonData)
@@ -116,7 +118,10 @@ $(function(){ldelim}
 						//IE6 bug fix
 						if(error != 'indexOf')
 							errors += '<li>'+jsonData.errors[error]+'</li>';
-					$('#create_account_error').html('<ol>'+errors+'</ol>').show();
+					var html = '<div class="alert alert-error"><button data-dismiss="alert" class="close" type="button">×</button><ol>'+errors+'</ol>';
+					$('#center_column').prepend(html).show();
+					$(".alert").alert();
+					form.find('.reg-email').focus();
 				}
 				else
 				{
@@ -153,82 +158,61 @@ $(function(){ldelim}
 		</ol>
 	</div>
 	{/if}-->
-	<form action="{$link->getPageLink('authentication', true)}" method="post" id="create-account_form" class="std">
-		<fieldset>
+
+	<div class="row-fluid">
+		<div class="span6 well">
 			<h3>{l s='Create your account'}</h3>
-			<div class="form_content clearfix">
-				<p class="title_block">{l s='Enter your e-mail address to create an account'}.</p>
-				<div class="error" id="create_account_error" style="display:none"></div>
-				<!--p class="text"-->
-					<label for="email_create">{l s='E-mail address'}</label>
-					<span><input type="text" id="email_create" name="email_create" value="{if isset($smarty.post.email_create)}{$smarty.post.email_create|stripslashes}{/if}" class="" /></span>
-				<!--/p-->
-				<!--p class="submit"-->
-					{if isset($back)}<input type="hidden" class="hidden" name="back" value="{$back|escape:'htmlall':'UTF-8'}" />{/if}
-					<input type="button" id="SubmitCreate" name="SubmitCreate" class="btn" value="{l s='Create your account'}" />
-					<input type="hidden" class="hidden" name="SubmitCreate" value="{l s='Create your account'}" />
-				<!--/p-->
-			</div>
-		</fieldset>
-	</form>
-
-	<!--form action="{$link->getPageLink('authentication', true)}" method="post" id="login_form" class="std">
-		<fieldset>
+			<form action="{$link->getPageLink('authentication', true)}" method="post" id="user-create-form" class="">
+				<p>{l s='Enter your e-mail address to create an account'}.</p>
+			    <div class="control-group">
+			    	<label class="control-label" for="inputIcon">{l s='E-mail address'}</label>
+			    	<div class="controls">
+					    <div class="input-prepend">
+					    <span class="add-on"><i class="icon-envelope"></i></span>
+					    <input class="reg-email" id="inputIcon" type="text">
+					    </div>
+			    	</div>
+			    </div>
+				<div class="offset3">
+					<button class="btn btn-primary" type="submit" id="new-user-create">{l s='Create your account'}</button>
+				</div>
+			</form>
+		</div>
+		<div class="span6 well">
 			<h3>{l s='Already registered?'}</h3>
-			<div class="">
-				<p class="text">
-					<label for="email">{l s='E-mail address'}</label>
-					<span><input type="text" id="email" name="email" value="{if isset($smarty.post.email)}{$smarty.post.email|stripslashes}{/if}" class="account_input" /></span>
-				</p>
-				<p class="text">
-					<label for="passwd">{l s='Password'}</label>
-					<span><input type="password" id="passwd" name="passwd" value="{if isset($smarty.post.passwd)}{$smarty.post.passwd|stripslashes}{/if}" class="account_input" /></span>
-				</p>
-				<p class="lost_password"><a href="{$link->getPageLink('password')}">{l s='Forgot your password?'}</a></p>
-				<p class="submit">
-					{if isset($back)}<input type="hidden" class="hidden" name="back" value="{$back|escape:'htmlall':'UTF-8'}" />{/if}
-					<input type="submit" id="SubmitLogin" name="SubmitLogin" class="btn" value="{l s='Log in'}" />
-				</p>
-			</div>
-		</fieldset>
-	</form-->
+			<form action="{$link->getPageLink('authentication', true)}" method="post">
+			    <div class="control-group">
+			          <!-- Text input-->
+			          <label class="control-label" for="log-email">E-mail адрес</label>
+			          <div class="controls">
+			          	<div class="input-prepend">
+					    <span class="add-on"><i class="icon-envelope"></i></span>
+			            <input placeholder="" class="input" type="text" name="email">
+			        	</div>
+			          </div>
+			    </div>
 
+			    <div class="control-group">
+			          <!-- Text input-->
+			          <label class="control-label" for="input01">Password</label>
+			          <div class="controls">
+			          	<div class="input-prepend">
+					    <span class="add-on"><i class="icon-lock"></i></span>
+			            <input placeholder="" class="input" type="password" name="passwd" value="{if isset($smarty.post.passwd)}{$smarty.post.passwd|stripslashes}{/if}">
+			        	</div>
+			          </div>
+			    </div>
 
-  	<form action="{$link->getPageLink('authentication', true)}" method="post" id="login_form" class="form-horizontal std">
-	   	<fieldset>
-	      <h3>{l s='Already registered?'}</h3>
-	    <div class="control-group">
-
-	          <!-- Text input-->
-	          <label class="control-label" for="input01">E-mail адрес</label>
-	          <div class="controls">
-	            <input placeholder="" class="input-xlarge" type="text">
-	            <p class="help-block"></p>
-	          </div>
-	        </div>
-
-	    <div class="control-group">
-
-	          <!-- Text input-->
-	          <label class="control-label" for="input01">Password</label>
-	          <div class="controls">
-	            <input placeholder="" class="input-xlarge" type="text">
-	            <p class="help-block"></p>
-	          </div>
-	        </div>
-
-	    <div class="control-group">
-	          <label class="control-label"></label>
-
-	          <!-- Button -->
-	          <div class="controls">
-	            <button class="btn btn-default">Button</button>
-	          </div>
-	        </div>
-
-	    </fieldset>
-    </form>
-
+			    <div class="control-group">
+			          <label class="control-label"></label>
+			          <!-- Button -->
+			          <div class="controls offset6">
+			            <button class="btn btn-primary" name="SubmitLogin" type="submit">{l s='Log in'}</button>
+			          </div>
+			    </div>
+			</form>
+		</div>
+	</div>
 
 	{if isset($inOrderProcess) && $inOrderProcess && $PS_GUEST_CHECKOUT_ENABLED}
 	<form action="{$link->getPageLink('authentication', true, NULL, "back=$back")}" method="post" id="new_account_form" class="std clearfix">

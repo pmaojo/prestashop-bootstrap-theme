@@ -929,7 +929,8 @@ table#cart_summary .gift-icon {
 
 #authentication #create-account_form fieldset,
 #authentication #login_form fieldset {
-	height: 200px
+	height: 200px;
+	border-radius: 4px 4px 4px 4px;
 }
 
 #authentication #create-account_form .form_content,
@@ -945,7 +946,8 @@ table#cart_summary .gift-icon {
 	font-size:12px;
 	color:#fff;
 	text-transform:uppercase;
-	background:url(../img/bg_form_h3.png) repeat-x 0 0 #989898
+	background:url(../img/bg_form_h3.png) repeat-x 0 0 #989898;
+	margin-top: 0;
 }
 #create-account_form .title_block  {
 	padding-bottom:22px;
