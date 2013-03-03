@@ -26,7 +26,7 @@
 {capture name=path}{l s='Order confirmation'}{/capture}
 {include file="$tpl_dir./breadcrumb.tpl"}
 
-<h1>{l s='Order confirmation'}</h1>
+<h3>{l s='Order confirmation'}</h3>
 
 {assign var='current_step' value='payment'}
 {include file="$tpl_dir./order-steps.tpl"}

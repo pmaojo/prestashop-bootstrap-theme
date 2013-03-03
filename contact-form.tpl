@@ -26,7 +26,7 @@
 {capture name=path}{l s='Contact'}{/capture}
 {include file="$tpl_dir./breadcrumb.tpl"}
 
-<h1>{l s='Customer Service'} - {if isset($customerThread) && $customerThread}{l s='Your reply'}{else}{l s='Contact us'}{/if}</h1>
+<h3>{l s='Customer Service'} - {if isset($customerThread) && $customerThread}{l s='Your reply'}{else}{l s='Contact us'}{/if}</h3>
 
 {if isset($confirmation)}
 	<p>{l s='Your message has been successfully sent to our team.'}</p>

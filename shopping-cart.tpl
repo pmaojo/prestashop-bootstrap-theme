@@ -26,7 +26,7 @@
 {capture name=path}{l s='Your shopping cart'}{/capture}
 {include file="$tpl_dir./breadcrumb.tpl"}
 
-<h1 id="cart_title">{l s='Shopping cart summary'}</h1>
+<h3 id="cart_title">{l s='Shopping cart summary'}</h3>
 
 {if isset($account_created)}
 	<p class="success">
@@ -38,9 +38,9 @@
 {include file="$tpl_dir./errors.tpl"}
 
 {if isset($empty)}
-	<p class="warning">{l s='Your shopping cart is empty.'}</p>
+	<p class="text-warning">{l s='Your shopping cart is empty.'}</p>
 {elseif $PS_CATALOG_MODE}
-	<p class="warning">{l s='This store has not accepted your new order.'}</p>
+	<p class="text-warning">{l s='This store has not accepted your new order.'}</p>
 {else}
 	<script type="text/javascript">
 	// <![CDATA[

@@ -28,14 +28,14 @@
 
 {if isset($category)}
 	{if $category->id AND $category->active}
-		<h1>
+		<h3>
 			{strip}
 				{$category->name|escape:'htmlall':'UTF-8'}
 				{if isset($categoryNameComplement)}
 					{$categoryNameComplement|escape:'htmlall':'UTF-8'}
 				{/if}
 			{/strip}
-		</h1>
+		</h3>
 		
 		<div class="resumecat category-product-count">
 			{include file="$tpl_dir./category-count.tpl"}
@@ -71,7 +71,7 @@
 		{if isset($subcategories)}
 		<!-- Subcategories -->
 		<div id="subcategories">
-			<h3>{l s='Subcategories'}</h3>
+			<h4>{l s='Subcategories'}</h4>
 			<ul class="inline_list">
 			{foreach from=$subcategories item=subcategory}
 				<li class="clearfix">

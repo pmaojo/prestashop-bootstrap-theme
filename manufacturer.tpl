@@ -28,7 +28,7 @@
 {include file="$tpl_dir./errors.tpl"}
 
 {if !isset($errors) OR !sizeof($errors)}
-	<h1>{l s='List of products by manufacturer'}&nbsp;{$manufacturer->name|escape:'htmlall':'UTF-8'}</h1>
+	<h3>{l s='List of products by manufacturer'}&nbsp;{$manufacturer->name|escape:'htmlall':'UTF-8'}</h3>
 	{if !empty($manufacturer->description) || !empty($manufacturer->short_description)}
 		<div class="description_box">
 			{if !empty($manufacturer->short_description)}
@@ -62,6 +62,6 @@
 		{include file="./pagination.tpl"}
 	</div>
 	{else}
-	<p class="warning">{l s='No products for this manufacturer.'}</p>
+	<p class="text-warning">{l s='No products for this manufacturer.'}</p>
 	{/if} 
 {/if}

@@ -26,7 +26,7 @@
 {capture name=path}<a href="{$link->getPageLink('my-account', true)}">{l s='My account'}</a><span class="navigation-pipe">{$navigationPipe}</span>{l s='Credit slips'}{/capture}
 {include file="$tpl_dir./breadcrumb.tpl"}
 
-<h1>{l s='Credit slips'}</h1>
+<h3>{l s='Credit slips'}</h3>
 <p>{l s='Credit slips you have received after cancelled orders'}.</p>
 <div class="block-center" id="block-history">
 	{if $ordersSlip && count($ordersSlip)}

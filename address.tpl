@@ -69,9 +69,10 @@ $(function(){ldelim}
 {capture name=path}{l s='Your addresses'}{/capture}
 {include file="$tpl_dir./breadcrumb.tpl"}
 
-<h1>{l s='Your addresses'}</h1>
+<h3>{l s='Your addresses'}</h3>
 
-<h3>
+<blockquote>
+<p>
 {if isset($id_address) && (isset($smarty.post.alias) || isset($address->alias))}
 	{l s='Modify address'} 
 	{if isset($smarty.post.alias)}
@@ -82,11 +83,12 @@ $(function(){ldelim}
 {else}
 	{l s='To add a new address, please fill out the form below.'}
 {/if}
-</h3>
+</p>
+</blockquote>
 
 {include file="$tpl_dir./errors.tpl"}
 
-<p class="required"><sup>*</sup> {l s='Required field'}</p>
+<p class="text-error"><strong><sup>*</sup></strong> {l s='Required field'}</p>
 
 <form action="{$link->getPageLink('address', true)}" method="post" class="std" id="add_adress">
 	<fieldset>

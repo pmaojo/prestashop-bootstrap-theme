@@ -26,7 +26,7 @@
 {capture name=path}{l s='Guest tracking'}{/capture}
 {include file="./breadcrumb.tpl"}
 
-<h1>{l s='Guest Tracking'}</h1>
+<h3>{l s='Guest Tracking'}</h3>
 
 {if isset($order_collection)}
 	{foreach $order_collection as $order}
@@ -61,7 +61,7 @@
 		</div>
 	{/foreach}
 
-	<h2 id="guestToCustomer">{l s='For more advantages...'}</h2>
+	<h3 id="guestToCustomer">{l s='For more advantages...'}</h3>
 
 	{include file="$tpl_dir./errors.tpl"}
 	

@@ -26,7 +26,7 @@
 {capture name=path}<a href="{$link->getPageLink('my-account', true)}">{l s='My account'}</a><span class="navigation-pipe">{$navigationPipe}</span>{l s='Your personal information'}{/capture}
 {include file="$tpl_dir./breadcrumb.tpl"}
 
-<h1>{l s='Your personal information'}</h1>
+<h3>{l s='Your personal information'}</h3>
 
 {include file="$tpl_dir./errors.tpl"}
 
@@ -127,6 +127,6 @@
 {/if}
 
 <ul class="footer_links">
-	<li><a href="{$link->getPageLink('my-account', true)}"><img src="{$img_dir}icon/my-account.gif" alt="" class="icon" /></a><a href="{$link->getPageLink('my-account', true)}">{l s='Back to your account'}</a></li>
-	<li class="f_right"><a href="{$base_dir}"><img src="{$img_dir}icon/home.gif" alt="" class="icon" /> {l s='Home'}</a></li>
+	<li><a href="{$link->getPageLink('my-account', true)}"><i class="icon-user"></i></a><a href="{$link->getPageLink('my-account', true)}">{l s='Back to your account'}</a></li>
+	<li class="f_right"><a href="{$base_dir}"><i class="icon-home"></i> {l s='Home'}</a></li>
 </ul>
