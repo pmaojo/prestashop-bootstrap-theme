@@ -26,22 +26,23 @@
 #pb-right-column #image-block #view_full_size .span_link {
 	position:absolute;
 	bottom:10px;
-	left:32%;
 	display:block;
 	padding:0 12px 0 30px;
-	line-height:20px;
+	line-height:30px;
 	color:#fff;
 	text-shadow:0 1px 0 #000;
 	text-align:center;
 	text-transform:uppercase;
 	background-image:url(../img/icon/zoom.png);
 	background-repeat:no-repeat;
-	background-position:10px 2px;
+	background-position:10px 6px;
 	background-color:#000;
 	background-color:rgba(0,0,0,0.5);
 	border-radius:12px;
 	-moz-border-radius:12px;
 	-webkit-border-radius:12px;
+    left: 15%;
+    margin-left: 0;
 }
 
 #pb-right-column #image-block #view_full_size .span_link img {

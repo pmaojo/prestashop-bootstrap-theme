@@ -176,12 +176,12 @@ var fieldRequired = '{l s='Please fill in all required fields, then save the cus
 		{if $have_image}
 			<span id="view_full_size">
 				<img src="{$link->getImageLink($product->link_rewrite, $cover.id_image, 'large_default')}" {if $jqZoomEnabled}class="jqzoom" alt="{$link->getImageLink($product->link_rewrite, $cover.id_image, 'thickbox_default')}"{else} title="{$product->name|escape:'htmlall':'UTF-8'}" alt="{$product->name|escape:'htmlall':'UTF-8'}" {/if} id="bigpic" width="{$largeSize.width}" height="{$largeSize.height}" />
-				<span class="span_link">{l s='View full size'}</span>
+				<span class="span_link span8">{l s='View full size'}</span>
 			</span>
 		{else}
 			<span id="view_full_size">
 				<img src="{$img_prod_dir}{$lang_iso}-default-large_default.jpg" id="bigpic" alt="" title="{$product->name|escape:'htmlall':'UTF-8'}" width="{$largeSize.width}" height="{$largeSize.height}" />
-				<span class="span_link">{l s='View full size'}</span>
+				<span class="span_link span8">{l s='View full size'}</span>
 			</span>
 		{/if}
 		</div>
@@ -434,11 +434,11 @@ var fieldRequired = '{l s='Please fill in all required fields, then save the cus
 					{l s='Add to cart'}
 				</span>
 			{else}
-				<p id="add_to_cart" class="buttons_bottom_block">
+				<!--p id="add_to_cart" class="buttons_bottom_block">
 					<span></span>
 					<input type="submit" name="Submit" value="{l s='Add to cart'}" class="exclusive" />
-				</p>
-				<button class="btn ajax-add2cart-button" data-loading-text="Loading..."><i class="icon-shopping-cart"></i>{l s='Add to cart'}</button>
+				</p-->
+				<button class="btn ajax-add2cart-button" data-loading-text="Добавляется..." autocomplete="off"><i class="icon-shopping-cart"></i>{l s='Add to cart'}</button>
 			{/if}
 			{if isset($HOOK_PRODUCT_ACTIONS) && $HOOK_PRODUCT_ACTIONS}{$HOOK_PRODUCT_ACTIONS}{/if}
 
@@ -492,40 +492,45 @@ var fieldRequired = '{l s='Please fill in all required fields, then save the cus
 
 <!-- description and features -->
 {if (isset($product) && $product->description) || (isset($features) && $features) || (isset($accessories) && $accessories) || (isset($HOOK_PRODUCT_TAB) && $HOOK_PRODUCT_TAB) || (isset($attachments) && $attachments) || isset($product) && $product->customizable}
-<div id="more_info_block" class="clear">
-	<ul id="more_info_tabs" class="idTabs idTabsShort clearfix">
-		{if $product->description}<li><a id="more_info_tab_more_info" href="#idTab1">{l s='More info'}</a></li>{/if}
-		{if $features}<li><a id="more_info_tab_data_sheet" href="#idTab2">{l s='Data sheet'}</a></li>{/if}
-		{if $attachments}<li><a id="more_info_tab_attachments" href="#idTab9">{l s='Download'}</a></li>{/if}
-		{if isset($accessories) AND $accessories}<li><a href="#idTab4">{l s='Accessories'}</a></li>{/if}
-		{if isset($product) && $product->customizable}<li><a href="#idTab10">{l s='Product customization'}</a></li>{/if}
+<div id="more_info_block" class="tabbable">
+	<ul id="more_info_tabs" class="nav nav-tabs">
+		{if $product->description}<li class="active"><a id="more_info_tab_more_info" href="#idTab1" data-toggle="tab">{l s='More info'}</a></li>{/if}
+		{if $features}<li><a id="more_info_tab_data_sheet" href="#idTab2" data-toggle="tab">{l s='Data sheet'}</a></li>{/if}
+		{if $attachments}<li><a id="more_info_tab_attachments" href="#idTab9" data-toggle="tab">{l s='Download'}</a></li>{/if}
+		{if isset($accessories) AND $accessories}<li><a href="#idTab4" data-toggle="tab">{l s='Accessories'}</a></li>{/if}
+		{if isset($product) && $product->customizable}<li><a href="#idTab10" data-toggle="tab">{l s='Product customization'}</a></li>{/if}
 		{$HOOK_PRODUCT_TAB}
 	</ul>
-	<div id="more_info_sheets" class="sheets align_justify">
+	<div id="more_info_sheets" class="tab-content">
 	{if isset($product) && $product->description}
 		<!-- full description -->
-		<div id="idTab1" class="rte">{$product->description}</div>
+		<div id="idTab1" class="tab-pane active">{$product->description}</div>
 	{/if}
 	{if isset($features) && $features}
 		<!-- product's features -->
-		<ul id="idTab2" class="bullet">
+		<div id="idTab2" class="tab-pane">
+		<ul>
 		{foreach from=$features item=feature}
             {if isset($feature.value)}
 			    <li><span>{$feature.name|escape:'htmlall':'UTF-8'}</span> {$feature.value|escape:'htmlall':'UTF-8'}</li>
             {/if}
 		{/foreach}
 		</ul>
+		</div>
 	{/if}
 	{if isset($attachments) && $attachments}
-		<ul id="idTab9" class="bullet">
+		<div id="idTab9" class="tab-pane">
+		<ul>
 		{foreach from=$attachments item=attachment}
 			<li><a href="{$link->getPageLink('attachment', true, NULL, "id_attachment={$attachment.id_attachment}")}">{$attachment.name|escape:'htmlall':'UTF-8'}</a><br />{$attachment.description|escape:'htmlall':'UTF-8'}</li>
 		{/foreach}
 		</ul>
+		</div>
 	{/if}
 	{if isset($accessories) AND $accessories}
 		<!-- accessories -->
-		<ul id="idTab4" class="bullet">
+		<div id="idTab4" class="tab-pane">
+		<ul>
 			<div class="block products_block accessories_block clearfix">
 				<div class="block_content">
 					<ul>
@@ -559,11 +564,13 @@ var fieldRequired = '{l s='Please fill in all required fields, then save the cus
 				</div>
 			</div>
 		</ul>
+		</div>
 	{/if}
 
 	<!-- Customizable products -->
 	{if isset($product) && $product->customizable}
-		<div id="idTab10" class="bullet customization_block">
+		<div id="idTab10" class="tab-pane">
+		<div>
 			<form method="post" action="{$customizationFormTarget}" enctype="multipart/form-data" id="customizationForm" class="clearfix">
 				<p class="infoCustomizable">
 					{l s='After saving your customized product, remember to add it to your cart.'}
@@ -621,6 +628,7 @@ var fieldRequired = '{l s='Please fill in all required fields, then save the cus
 				</p>
 			</form>
 			<p class="clear required"><sup>*</sup> {l s='required fields'}</p>
+		</div>
 		</div>
 	{/if}
 
