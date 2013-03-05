@@ -62,10 +62,10 @@
 							<a class="btn ajax-add2cart-button-from-list" rel="ajax_id_product_{$product.id_product|intval}" href="{$link->getPageLink('cart',false, NULL, "add&amp;id_product={$product.id_product|intval}", false)}" title="{l s='Add to cart'}" data-loading-text="Добавляется..." autocomplete="off"><i class="icon-shopping-cart"></i>{l s='Add to cart'}</a>
 						{/if}						
 					{else}
-						<span class="exclusive"><span></span>{l s='Add to cart'}</span><br />
+						<!--span class="exclusive"><span></span>{l s='Add to cart'}</span--><br />
 					{/if}
 				{/if}
-				<a class="button lnk_view" href="{$product.link|escape:'htmlall':'UTF-8'}" title="{l s='View'}">{l s='View'}</a>
+				<a class="btn btn-small btn-inverse" style="color:#FFFFFF;" href="{$product.link|escape:'htmlall':'UTF-8'}" title="{l s='View'}">{l s='View'} »</a>
 			</div>
 		</li>
 	{/foreach}
