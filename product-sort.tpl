@@ -53,22 +53,24 @@ $(document).ready(function()
 //]]>
 </script>
 
-<form id="productsSortForm" action="{$request|escape:'htmlall':'UTF-8'}">
-	<p class="select">
-		<label for="selectPrductSort">{l s='Sort by'}</label>
-		<select id="selectPrductSort" class="selectProductSort">
-			<option value="{$orderbydefault|escape:'htmlall':'UTF-8'}:{$orderwaydefault|escape:'htmlall':'UTF-8'}" {if $orderby eq $orderbydefault}selected="selected"{/if}>{l s='--'}</option>
-			{if !$PS_CATALOG_MODE}
-				<option value="price:asc" {if $orderby eq 'price' AND $orderway eq 'asc'}selected="selected"{/if}>{l s='Price: lowest first'}</option>
-				<option value="price:desc" {if $orderby eq 'price' AND $orderway eq 'desc'}selected="selected"{/if}>{l s='Price: highest first'}</option>
-			{/if}
-			<option value="name:asc" {if $orderby eq 'name' AND $orderway eq 'asc'}selected="selected"{/if}>{l s='Product Name: A to Z'}</option>
-			<option value="name:desc" {if $orderby eq 'name' AND $orderway eq 'desc'}selected="selected"{/if}>{l s='Product Name: Z to A'}</option>
-			{if !$PS_CATALOG_MODE}
-				<option value="quantity:desc" {if $orderby eq 'quantity' AND $orderway eq 'desc'}selected="selected"{/if}>{l s='In-stock first'}</option>
-			{/if}
-		</select>
-	</p>
+<form id="productsSortForm" action="{$request|escape:'htmlall':'UTF-8'}" style="clear:both">
+	<div class="control-group">
+		<label for="selectPrductSort" class="control-label">{l s='Sort by'}</label>
+		<div class="controls">
+			<select id="selectPrductSort" class="selectProductSort input-xlarge">
+				<option value="{$orderbydefault|escape:'htmlall':'UTF-8'}:{$orderwaydefault|escape:'htmlall':'UTF-8'}" {if $orderby eq $orderbydefault}selected="selected"{/if}>{l s='--'}</option>
+				{if !$PS_CATALOG_MODE}
+					<option value="price:asc" {if $orderby eq 'price' AND $orderway eq 'asc'}selected="selected"{/if}>{l s='Price: lowest first'}</option>
+					<option value="price:desc" {if $orderby eq 'price' AND $orderway eq 'desc'}selected="selected"{/if}>{l s='Price: highest first'}</option>
+				{/if}
+				<option value="name:asc" {if $orderby eq 'name' AND $orderway eq 'asc'}selected="selected"{/if}>{l s='Product Name: A to Z'}</option>
+				<option value="name:desc" {if $orderby eq 'name' AND $orderway eq 'desc'}selected="selected"{/if}>{l s='Product Name: Z to A'}</option>
+				{if !$PS_CATALOG_MODE}
+					<option value="quantity:desc" {if $orderby eq 'quantity' AND $orderway eq 'desc'}selected="selected"{/if}>{l s='In-stock first'}</option>
+				{/if}
+			</select>
+		</div>
+	</div>
 </form>
 <!-- /Sort products -->
 {/if}

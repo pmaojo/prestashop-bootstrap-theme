@@ -8,7 +8,7 @@ ul#product_list {
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	border-radius: 3px
-}
+}	
 
 #product_list li .left_block {
 	float:left;
@@ -93,7 +93,7 @@ ul#product_list {
 		text-transform: uppercase
 	}
 	#product_list li .discount {
-		position:absolute;
+		/*position:absolute;*/
 		top:0;
 		right:0;
 		display: inline-block;

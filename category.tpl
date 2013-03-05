@@ -37,7 +37,7 @@
 			{/strip}
 		</h3>
 		
-		<div class="resumecat category-product-count">
+		<div class="resumecat category-product-count well well-mini">
 			{include file="$tpl_dir./category-count.tpl"}
 		</div>
 		
@@ -94,25 +94,34 @@
 		{/if}
 
 		{if $products}
-			<div class="content_sortPagiBar">
-				{include file="$tpl_dir./pagination.tpl"}
-				<div class="sortPagiBar clearfix">
-					{include file="./product-sort.tpl"}
-					{include file="./product-compare.tpl"}
-					{include file="./nbr-product-page.tpl"}
-				</div>
+		<div class="row-fluid">
+			<div class="span6">
+			{include file="$tpl_dir./pagination.tpl"}
 			</div>
+			<div class="span6">
+			{include file="./product-sort.tpl"}
+			</div>
+		</div>
+			<!--div class="content_sortPagiBar">
+				<div class="sortPagiBar clearfix">
+					{*include file="./product-compare.tpl"*}
+					{*include file="./nbr-product-page.tpl"*}
+				</div>
+			</div-->
 			
 			{include file="./product-list.tpl" products=$products}
+
+			{*include file="./product-sort.tpl"*}
+			{include file="$tpl_dir./pagination.tpl"}
 			
-			<div class="content_sortPagiBar">
+			<!--div class="content_sortPagiBar">
 				<div class="sortPagiBar clearfix">
-					{include file="./product-sort.tpl"}
-					{include file="./product-compare.tpl"}
-					{include file="./nbr-product-page.tpl"}
+					{*include file="./product-sort.tpl"*}
+					{*include file="./product-compare.tpl"*}
+					{*include file="./nbr-product-page.tpl"*}
 				</div>
-				{include file="./pagination.tpl"}
-			</div>
+				{*include file="./pagination.tpl"*}
+			</div-->
 		{/if}
 	{elseif $category->id}
 		<p class="warning">{l s='This category is currently unavailable.'}</p>

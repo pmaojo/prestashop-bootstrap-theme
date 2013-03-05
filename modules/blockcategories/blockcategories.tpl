@@ -24,10 +24,11 @@
 *}
 
 <!-- Block categories module -->
-<div id="categories_block_left" class="block">
-	<p class="title_block">{l s='Categories' mod='blockcategories'}</p>
+<div id="" class="block">
+	<!-- <p class="title_block">{l s='Categories' mod='blockcategories'}</p> -->
 	<div class="block_content">
-		<ul class="tree {if $isDhtml}dhtml{/if}">
+		<ul class="nav nav-list nav-stacked {if $isDhtml}dhtml{/if}" style="padding-right:0px;padding-left:0px;">
+		<li class="title_block" style="padding-left:15px;line-height:30px;">{l s='Categories' mod='blockcategories'}</li>
 		{foreach from=$blockCategTree.children item=child name=blockCategTree}
 			{if $smarty.foreach.blockCategTree.last}
 				{include file="$branche_tpl_path" node=$child last='true'}
@@ -40,7 +41,7 @@
 		<script type="text/javascript">
 		// <![CDATA[
 			// we hide the tree only if JavaScript is activated
-			$('div#categories_block_left ul.dhtml').hide();
+			// $('div#categories_block_left ul.dhtml').hide();
 		// ]]>
 		</script>
 	</div>
