@@ -376,22 +376,122 @@ $(function(){ldelim}
 	</form>
 	{/if}
 {else}
-	<!--{if isset($account_error)}
-	<div class="error">
-		{if {$account_error|@count} == 1}
-			<p>{l s='There is one error'} :</p>
-			{else}
-			<p>{l s='There are %s errors' sprintf=[$account_error|@count]} :</p>
-		{/if}
-		<ol>
-			{foreach from=$account_error item=v}
-				<li>{$v}</li>
-			{/foreach}
-		</ol>
+	<h3>{l s='Your personal information'}</h3>
+	<script type="text/javascript">
+	{literal}
+	$(document).ready(function(){
+		// Retrocompatibility with 1.4
+		if (typeof baseUri === "undefined" && typeof baseDir !== "undefined")
+		baseUri = baseDir;
+		$('.gender-select').click(function(e){
+			$('#id_gender').val($(this).attr('data-attr'));
+		});
+	});
+	{/literal}
+	</script>
+
+	<div class="row-fluid">
+		<div class="span12 well">
+		<form action="{$link->getPageLink('authentication', true)}" method="post" id="new-account-register" class="">
+		    <fieldset>
+		      <div id="legend" class="">
+		        <legend class="">Ваша персональная информация</legend>
+		      </div>
+			{$HOOK_CREATE_ACCOUNT_TOP}
+				<input type="hidden" name="id_gender" id="id_gender" value="0"  />
+			    <div class="btn-group" data-toggle="buttons-radio">
+				    <button type="button" class="btn btn-primary gender-select {if isset($smarty.post.id_gender) && $smarty.post.id_gender == 1}active{/if}" data-attr="1">Мужчина</button>
+				    <button type="button" class="btn btn-primary gender-select {if !isset($smarty.post.id_gender) || $smarty.post.id_gender == 0}active{/if}" data-attr="0">Выберите пол</button>
+				    <button type="button" class="btn btn-primary gender-select {if isset($smarty.post.id_gender) && $smarty.post.id_gender == 2}active{/if}" data-attr="2">Жещина</button>
+			    </div>
+		    	<div class="control-group">
+
+		          <!-- Text input-->
+		          <label class="control-label" for="customer_firstname">{l s='First name'} </label>
+		          <div class="controls">
+		            <input placeholder="" class="input-xlarge" type="text" name="customer_firstname" id="customer_firstname" value="{if isset($smarty.post.customer_firstname)}{$smarty.post.customer_firstname}{/if}">
+		          </div>
+		        </div>
+
+		    	<div class="control-group">
+
+		          <!-- Text input-->
+		          <label class="control-label" for="customer_lastname">{l s='Last name'} </label>
+		          <div class="controls">
+		            <input placeholder="" class="input-xlarge" type="text" id="customer_lastname" name="customer_lastname" value="{if isset($smarty.post.customer_lastname)}{$smarty.post.customer_lastname}{/if}">
+		          </div>
+		        </div>	
+
+		    	<div class="control-group">
+
+		          <!-- Text input-->
+		          <label class="control-label" for="email">{l s='E-mail'} </label>
+		          <div class="controls">
+		            <input placeholder="" class="input-xlarge" type="text" id="email" name="email" value="{if isset($smarty.post.email)}{$smarty.post.email}{/if}">
+		          </div>
+		        </div>	
+
+		    	<div class="control-group">
+
+		          <!-- Text input-->
+		          <label class="control-label" for="input01">{l s='Password'} </label>
+		          <div class="controls">
+		            <input placeholder="{l s='(5 characters min.)'}" type="password" class="input-xlarge" name="passwd" id="passwd" >
+		          </div>
+		        </div>  
+
+		        <div class="control-group">
+    			<label class="control-label"  for="phone_mobile">{l s='Mobile phone'} {if $one_phone_at_least}{/if}</label>
+					<div class="controls">	
+					<input type="text" class="text" name="phone_mobile" id="phone_mobile" value="{if isset($smarty.post.phone_mobile)}{$smarty.post.phone_mobile}{/if}" />
+		          	</div>
+		        </div>	
+
+		        <!-- Birthday is not actual now -->
+
+		    	<!-- <div class="control-group">
+
+		          <label class="control-label">Birthday</label>
+		          <div class="controls">
+		            <select class="input-xlarge">
+				      <option>Enter</option>
+				      <option>Your</option>
+				      <option>Options</option>
+				      <option>Here!</option>
+				  	</select>
+		          </div>
+
+		        </div> -->
+
+		    	<div class="control-group">
+		          <label class="control-label"></label>
+		          	<div class="controls">
+				      <!-- Multiple Checkboxes -->
+				      <label class="checkbox">
+				        <input name="newsletter" value="1" type="checkbox">
+				        {l s='Sign up for our newsletter'}
+				      </label>
+				      <label class="checkbox">
+				        <input name="optin" value="1" type="checkbox">
+				        {l s='Receive special offers from our partners'}
+				      </label>
+		  			</div>
+		        </div>
+
+		    	<div class="control-group">
+		          <label class="control-label"></label>
+		          <!-- Button -->
+		          <div class="controls">
+		            <button class="btn btn-primary" type="submit" name="submitAccount" id="submitAccount">Регистрировать</button>
+		          </div>
+		        </div>
+
+			</fieldset>
+		</form>
+		</div>
 	</div>
-	{/if}-->
-<form action="{$link->getPageLink('authentication', true)}" method="post" id="account-creation_form" class="std">
-	{$HOOK_CREATE_ACCOUNT_TOP}
+<!-- <form action="{$link->getPageLink('authentication', true)}" method="post" id="account-creation_form" class="std">
+	{*$HOOK_CREATE_ACCOUNT_TOP*}
 	<fieldset class="account_creation">
 		<h3>{l s='Your personal information'}</h3>
 		<p class="radio required">
@@ -594,7 +694,7 @@ $(function(){ldelim}
 		</p>
 	</fieldset>
 	{/if}
-	{$HOOK_CREATE_ACCOUNT_FORM}
+	{*$HOOK_CREATE_ACCOUNT_FORM*}
 	<p class="cart_navigation required submit">
 		<input type="hidden" name="email_create" value="1" />
 		<input type="hidden" name="is_new_customer" value="1" />
@@ -602,5 +702,5 @@ $(function(){ldelim}
 		<input type="submit" name="submitAccount" id="submitAccount" value="{l s='Register'}" class="exclusive" />
 		<span><sup>*</sup>{l s='Required field'}</span>
 	</p>
-</form>
+</form> -->
 {/if}
