@@ -25,7 +25,7 @@
 *}
 
 <!-- MODULE Block contact infos -->
-<div id="block_contact_infos">
+<div id="block_contact_infos" class="span3 offset3">
 	<p class="title_block">{l s='Contact us' mod='blockcontactinfos'}</p>
 	<ul>
 		{if $blockcontactinfos_company != ''}<li><strong>{$blockcontactinfos_company|escape:'htmlall':'UTF-8'}</strong></li>{/if}

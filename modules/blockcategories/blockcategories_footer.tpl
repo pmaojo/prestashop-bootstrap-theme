@@ -24,7 +24,7 @@
 *}
 
 <!-- Block categories module -->
-<div class="blockcategories_footer">
+<div class="blockcategories_footer span2">
 	<p class="title_block">{l s='Categories' mod='blockcategories'}</p>
 <div class="category_footer" style="float:left;clear:none;width:{$widthColumn}%">
 	<div style="float:left" class="list">

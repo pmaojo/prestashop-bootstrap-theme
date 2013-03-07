@@ -573,7 +573,8 @@ div.star_hover a, div.star a:hover { background-position: 0 -32px }
 ************************************************************************************************ */
 #footer {
 	color:#fff;
-	background:#333
+	background:#333;
+	margin: auto 20px;
 }
 	.blockcategories_footer,
 	#footer .myaccount ,
@@ -581,7 +582,7 @@ div.star_hover a, div.star a:hover { background-position: 0 -32px }
 	#social_block,
 	#block_contact_infos {
 		float:left;
-		width:175px
+		/*width:175px*/
 	}
 	.blockcategories_footer {margin-left:0}
 #footer .title_block {
