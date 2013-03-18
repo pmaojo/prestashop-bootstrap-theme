@@ -82,7 +82,7 @@ public function hookDisplayMobileHeader($params)
 	{
 		$this->calculHookCommon($params);
 		$this->smarty->assign('blocksearch_type', 'block');
-		return $this->display(__FILE__, 'blocksearch.tpl');
+		return $this->display(_THEME_DIR_.'modules/blocksearch/', 'blocksearch.tpl');
 	}
 
 	public function hookTop($params)
