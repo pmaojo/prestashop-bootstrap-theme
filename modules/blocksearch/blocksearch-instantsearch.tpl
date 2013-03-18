@@ -60,34 +60,34 @@
 	<script type="text/javascript">
 	// <![CDATA[
 		$('document').ready( function() {
-			$("#search_query_{$blocksearch_type}")
-				.autocomplete(
-					'{if $search_ssl == 1}{$link->getPageLink('search', true)}{else}{$link->getPageLink('search')}{/if}', {
-						minChars: 3,
-						max: 10,
-						width: 500,
-						selectFirst: false,
-						scroll: false,
-						dataType: "json",
-						formatItem: function(data, i, max, value, term) {
-							return value;
-						},
-						parse: function(data) {
-							var mytab = new Array();
-							for (var i = 0; i < data.length; i++)
-								mytab[mytab.length] = { data: data[i], value: data[i].cname + ' > ' + data[i].pname };
-							return mytab;
-						},
-						extraParams: {
-							ajaxSearch: 1,
-							id_lang: {$cookie->id_lang}
-						}
-					}
-				)
-				.result(function(event, data, formatted) {
-					$('#search_query_{$blocksearch_type}').val(data.pname);
-					document.location.href = data.product_link;
-				})
+			// $("#search_query_{$blocksearch_type}")
+			// 	.autocomplete(
+			// 		'{if $search_ssl == 1}{$link->getPageLink('search', true)}{else}{$link->getPageLink('search')}{/if}', {
+			// 			minChars: 3,
+			// 			max: 10,
+			// 			width: 500,
+			// 			selectFirst: false,
+			// 			scroll: false,
+			// 			dataType: "json",
+			// 			formatItem: function(data, i, max, value, term) {
+			// 				return value;
+			// 			},
+			// 			parse: function(data) {
+			// 				var mytab = new Array();
+			// 				for (var i = 0; i < data.length; i++)
+			// 					mytab[mytab.length] = { data: data[i], value: data[i].cname + ' > ' + data[i].pname };
+			// 				return mytab;
+			// 			},
+			// 			extraParams: {
+			// 				ajaxSearch: 1,
+			// 				id_lang: {$cookie->id_lang}
+			// 			}
+			// 		}
+			// 	)
+			// 	.result(function(event, data, formatted) {
+			// 		$('#search_query_{$blocksearch_type}').val(data.pname);
+			// 		document.location.href = data.product_link;
+			// 	})
 		});
 	// ]]>
 	</script>
