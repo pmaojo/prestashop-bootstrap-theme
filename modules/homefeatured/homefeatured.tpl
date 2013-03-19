@@ -47,9 +47,9 @@
 						
 						{if ($product.id_product_attribute == 0 OR (isset($add_prod_display) AND ($add_prod_display == 1))) AND $product.available_for_order AND !isset($restricted_country_mode) AND $product.minimal_quantity == 1 AND $product.customizable != 2 AND !$PS_CATALOG_MODE}
 							{if ($product.quantity > 0 OR $product.allow_oosp)}
-							<a class="btn btn-info ajax_add_to_cart_button pull-right" rel="ajax_id_product_{$product.id_product}" href="{$link->getPageLink('cart')}?qty=1&amp;id_product={$product.id_product}&amp;token={$static_token}&amp;add" title="{l s='Add to cart' mod='homefeatured'}">{l s='Add to cart' mod='homefeatured'}</a>
+							<a class="btn btn-info btn-small ajax_add_to_cart_button pull-right" rel="ajax_id_product_{$product.id_product}" href="{$link->getPageLink('cart')}?qty=1&amp;id_product={$product.id_product}&amp;token={$static_token}&amp;add" title="{l s='Add to cart' mod='homefeatured'}">{l s='Add to cart' mod='homefeatured'}</a>
 							{else}
-							<span class="btn btn-primary disabled">{l s='Add to cart' mod='homefeatured'}</span>
+							<span class="btn btn-small pull-right disabled">{l s='Add to cart' mod='homefeatured'}</span>
 							{/if}
 						{else}
 							<div style="height:23px;"></div>
