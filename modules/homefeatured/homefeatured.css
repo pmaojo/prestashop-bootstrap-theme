@@ -73,6 +73,7 @@
 #featured-products_block_center .price_container {
 	margin-top:10px;
 	padding:0;
+	margin-bottom: 10px;
 }
 #featured-products_block_center .price {
 	font-weight:bold;
