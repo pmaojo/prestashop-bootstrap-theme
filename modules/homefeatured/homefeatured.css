@@ -59,7 +59,7 @@
 #featured-products_block_center .product_desc {height:32px;line-height: 15px;}
 #featured-products_block_center .product_desc,
 #featured-products_block_center .product_desc a {
-	color:#666;
+	/*color:#666;*/
 	font-size: 12px;
 }
 #featured-products_block_center .lnk_more {
