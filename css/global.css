@@ -297,7 +297,7 @@ table.table_block  td {
 		color:#fff;
 		text-shadow:0 1px 0 #000;
 		text-transform:uppercase;
-		background:#383838;
+		background:#45AEEA;
 		text-align:left;
 		font-weight: bold;
 		border-radius: 4px 4px 0 0;
@@ -573,7 +573,7 @@ div.star_hover a, div.star a:hover { background-position: 0 -32px }
 ************************************************************************************************ */
 #footer {
 	color:#fff;
-	background:#333;
+	background:#45AEEA;
 }
 	.blockcategories_footer,
 	#footer .myaccount ,
