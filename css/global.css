@@ -43,7 +43,7 @@ a {cursor:pointer}
 	#columns {z-index:1}
 		#left_column {}
 		#center_column {}
-		#right_column {margin-top: -10px;}
+		#right_column {}
 	#footer {}
 
 
