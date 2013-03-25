@@ -1,0 +1,24 @@
+/* block CONTACT ******************************************************************************* */
+#contact_block .block_content {
+	padding:10px 0 15px 0;
+	background: url(../../img/support.png) no-repeat 3% 90% transparent;
+}
+
+#contact_block i {
+	/*padding:0 5px 15px 5px;*/
+	font-size: 13px;
+	/*line-height: 18px*/
+}
+
+#contact_block .title_block,   #contact_block h4 {
+	padding:6px 11px;
+	font-size: 12px;
+	line-height: auto
+}
+#contact_block a {
+	margin-left:60px;
+	/*padding:6px 8px;*/
+}
+#contact_block a:hover {text-decoration:none}
+
+#contact_block .label {display: none}
