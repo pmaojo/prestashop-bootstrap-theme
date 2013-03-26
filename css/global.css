@@ -2060,9 +2060,9 @@ tr.subitem > td:first-child + td {
 /*************** Block SOCIAL ***************/
 #social_block {padding:15px 10px;}
 #social_block li {padding-left:22px !important;}
-#social_block li.facebook {background:url(../../../modules/blocksocial/img/sprite_pict_social_block.png) no-repeat 0 6px;}
-#social_block li.twitter {background:url(../../../modules/blocksocial/img/sprite_pict_social_block.png) no-repeat 0 -26px;}
-#social_block li.rss {background:url(../../../modules/blocksocial/img/sprite_pict_social_block.png) no-repeat 0 -56px;}
+#social_block li.facebook {background:url(../img/facebook.png) no-repeat 0 9px;}
+#social_block li.twitter {background:url(../img/twitter.png) no-repeat 0 9px;}
+#social_block li.rss {background:url(../img/rss.png) no-repeat 0 9px;}
 
 
 /*************** Block STORE ***************/
