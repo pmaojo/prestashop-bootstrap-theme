@@ -26,7 +26,7 @@
 <!-- MODULE Block new products -->
 <div id="new-products_block_right" class="block products_block">
 	<p class="title_block"><a href="{$link->getPageLink('new-products')}" title="{l s='New products' mod='blocknewproducts'}">{l s='New products' mod='blocknewproducts'}</a></p>
-	<div class="block_content">
+	<div class="block_content side-pad">
 	{if $new_products !== false}
 		<ul class="product_images clearfix">
 		{foreach from=$new_products item='product' name='newProducts'}
