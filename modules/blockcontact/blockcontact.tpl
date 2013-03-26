@@ -26,8 +26,8 @@
 <div id="contact_block" class="block">
 	<p class="title_block">{l s='Contact us' mod='blockcontact'}</p>
 	<div class="block_content clearfix" style="padding:10px;">
-			<span>{l s='Our hotline is available 24/7' mod='blockcontact'}</span>
+			<span>{l s='Связаться с нами' mod='blockcontact'}</span>
 			<div>{if $telnumber != ''}<i class="icon-headphones"></i>{$telnumber|escape:'htmlall':'UTF-8'}{/if}</div>
-			{if $email != ''}<a href="mailto:{$email|escape:'htmlall':'UTF-8'}" class="btn btn-primary btn-small" style="margin-top:35px;">{l s='Contact our hotline' mod='blockcontact'}</a>{/if}
+			{if $email != ''}<a href="mailto:{$email|escape:'htmlall':'UTF-8'}" class="btn btn-primary btn-small" style="margin-top:35px;">{l s='Написать письмо' mod='blockcontact'}</a>{/if}
 	</div>
 </div>
