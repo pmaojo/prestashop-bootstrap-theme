@@ -25,9 +25,9 @@
 
 <div id="contact_block" class="block">
 	<p class="title_block">{l s='Contact us' mod='blockcontact'}</p>
-	<div class="block_content clearfix">
+	<div class="block_content clearfix side-pad">
 			<p>{l s='Our hotline is available 24/7' mod='blockcontact'}</p>
 			{if $telnumber != ''}<p class="tel"><span class="label">{l s='Phone:' mod='blockcontact'}</span>{$telnumber|escape:'htmlall':'UTF-8'}</p>{/if}
-			{if $email != ''}<a href="mailto:{$email|escape:'htmlall':'UTF-8'}">{l s='Contact our hotline' mod='blockcontact'}</a>{/if}
+			{if $email != ''}<a href="mailto:{$email|escape:'htmlall':'UTF-8'}" class="btn btn-info btn-mini pull-right" style="margin-bottom:10px;">{l s='Contact our hotline' mod='blockcontact'}</a>{/if}
 	</div>
 </div>

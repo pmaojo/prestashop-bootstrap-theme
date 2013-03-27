@@ -149,7 +149,7 @@ var fieldRequired = '{l s='Please fill in all required fields, then save the cus
 </script>
 
 {include file="$tpl_dir./breadcrumb.tpl"}
-<div id="primary_block" class="clearfix">
+<div id="primary_block" class="clearfix span12">
 
 	{if isset($adminActionDisplay) && $adminActionDisplay}
 	<div id="admin-action">
@@ -170,7 +170,7 @@ var fieldRequired = '{l s='Please fill in all required fields, then save the cus
 	{/if}
 
 	<!-- right infos-->
-	<div id="pb-right-column">
+	<div id="pb-right-column" class="span5">
 		<!-- product img-->
 		<div id="image-block">
 		{if $have_image}
@@ -217,7 +217,7 @@ var fieldRequired = '{l s='Please fill in all required fields, then save the cus
 	</div>
 
 	<!-- left infos-->
-	<div id="pb-left-column">
+	<div id="pb-left-column" class="span7">
 		<h1>{$product->name|escape:'htmlall':'UTF-8'}</h1>
 
 		{if $product->description_short OR $packItems|@count > 0}
@@ -335,9 +335,9 @@ var fieldRequired = '{l s='Please fill in all required fields, then save the cus
 			{/if}
 
 			<!-- availability -->
-			<p id="availability_statut"{if ($product->quantity <= 0 && !$product->available_later && $allow_oosp) OR ($product->quantity > 0 && !$product->available_now) OR !$product->available_for_order OR $PS_CATALOG_MODE} style="display: none;"{/if}>
-				<span id="availability_label">{l s='Availability:'}</span>
-				<span id="availability_value"{if $product->quantity <= 0} class="warning_inline"{/if}>
+			<p id="availability_status"{if ($product->quantity <= 0 && !$product->available_later && $allow_oosp) OR ($product->quantity > 0 && !$product->available_now) OR !$product->available_for_order OR $PS_CATALOG_MODE} style="display: none;"{/if}>
+				<span id="availability_label" class="">{l s='Availability:'}</span>
+				<span id="availability_value" class="label{if $product->quantity <= 0} label-important{else} label-success{/if}">
 				{if $product->quantity <= 0}{if $allow_oosp}{$product->available_later}{else}{l s='This product is no longer in stock'}{/if}{else}{$product->available_now}{/if}
 				</span>
 			</p>

@@ -7,7 +7,7 @@
 /* pb-right-column ***************************************************************************** */
 #pb-right-column {
 	float:left;
-	width:266px;
+	/*width:266px;*/
 }
 
 #pb-right-column #image-block {
@@ -137,7 +137,7 @@ span.view_scroll_spacer {
 #pb-left-column {
 	float:left;
 	margin-left:14px;
-	width:255px;
+	/*width:255px;*/
 }
 
 #pb-left-column h1 {
