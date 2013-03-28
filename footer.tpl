@@ -38,5 +38,21 @@
 			</div>
 		</div>
 	{/if}
+
+	<script>
+		function setCookie (name, value, expires, path, domain, secure) {
+		      document.cookie = name + "=" + escape(value) +
+		        ((expires) ? "; expires=" + expires : "") +
+		        ((path) ? "; path=" + path : "") +
+		        ((domain) ? "; domain=" + domain : "") +
+		        ((secure) ? "; secure" : "");
+		}
+		window.onload = function(){
+		setCookie("wheight", window.document.body.scrollHeight, false, '/', "magkaznu.com");
+		};
+		$(window).load(function(){
+		setCookie("wheight", window.document.body.scrollHeight, false, '/', "magkaznu.com");
+		});
+	</script>
 	</body>
 </html>
