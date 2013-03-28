@@ -217,7 +217,7 @@ var fieldRequired = '{l s='Please fill in all required fields, then save the cus
 	</div>
 
 	<!-- left infos-->
-	<div id="pb-left-column" class="span7">
+	<div id="pb-left-column" class="span6">
 		<h1>{$product->name|escape:'htmlall':'UTF-8'}</h1>
 
 		{if $product->description_short OR $packItems|@count > 0}
