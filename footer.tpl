@@ -47,11 +47,13 @@
 		        ((domain) ? "; domain=" + domain : "") +
 		        ((secure) ? "; secure" : "");
 		}
+		var l = location.hostname;
+		var tld = l.substr(l.lastIndexOf("."));
 		window.onload = function(){
-		setCookie("wheight", window.document.body.scrollHeight, false, '/', "magkaznu.com");
+		setCookie("wheight", window.document.body.scrollHeight, false, '/', "magkaznu"+tld);
 		};
 		$(window).load(function(){
-		setCookie("wheight", window.document.body.scrollHeight, false, '/', "magkaznu.com");
+		setCookie("wheight", window.document.body.scrollHeight, false, '/', "magkaznu"+tld);
 		});
 	</script>
 	</body>
