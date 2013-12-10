@@ -24,7 +24,7 @@
 *}
 
 <!-- Block permanent links module HEADER -->
-<div class="navbar span5 offset7">
+<div class="navbar col-md-5 offset7">
 	<div class="navbar-inner">
 		<ul id="header_links" class="nav">
 			<li id="header_link_contact"><a href="{$link->getPageLink('contact', true)}" title="{l s='contact' mod='blockpermanentlinks'}" class="">{l s='contact' mod='blockpermanentlinks'}</a></li>

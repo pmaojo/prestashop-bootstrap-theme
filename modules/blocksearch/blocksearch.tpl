@@ -32,7 +32,7 @@
 			<input type="hidden" name="orderby" value="position" />
 			<input type="hidden" name="controller" value="search" />
 			<input type="hidden" name="orderway" value="desc" />
-			<input type="text" name="search_query" class="span9" style="margin-bottom:0px;" value="{if isset($smarty.get.search_query)}{$smarty.get.search_query|htmlentities:$ENT_QUOTES:'utf-8'|stripslashes}{/if}" />
+			<input type="text" name="search_query" class="col-md-9" style="margin-bottom:0px;" value="{if isset($smarty.get.search_query)}{$smarty.get.search_query|htmlentities:$ENT_QUOTES:'utf-8'|stripslashes}{/if}" />
 			<input type="submit" id="search_button" class="btn btn-info" value="{l s='go' mod='blocksearch'}" />
 		</div>
 	</form>

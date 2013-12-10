@@ -24,8 +24,8 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 
-<div id="social_block" class="span2">
-	<p class="title_block">{l s='Follow us' mod='blocksocial'}</p>
+<div id="social_block" class="col-md-2">
+	<p class="panel-heading">{l s='Follow us' mod='blocksocial'}</p>
 	<ul>
 		{if $facebook_url != ''}<li class="facebook"><a href="{$facebook_url|escape:html:'UTF-8'}">{l s='Facebook' mod='blocksocial'}</a></li>{/if}
 		{if $twitter_url != ''}<li class="twitter"><a href="{$twitter_url|escape:html:'UTF-8'}">{l s='Twitter' mod='blocksocial'}</a></li>{/if}

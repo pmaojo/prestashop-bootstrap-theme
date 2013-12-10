@@ -24,8 +24,8 @@
 *}
 
 <!-- Block myaccount module -->
-<div class="block myaccount">
-	<p class="title_block"><a href="{$link->getPageLink('my-account', true)}">{l s='My account' mod='blockmyaccount'}</a></p>
+<div class="col-md-2">
+	<p class="panel-heading"><a href="{$link->getPageLink('my-account', true)}">{l s='My account' mod='blockmyaccount'}</a></p>
 	<div class="block_content">
 		<ul class="bullet">
 			<li><a href="{$link->getPageLink('history', true)}" title="">{l s='My orders' mod='blockmyaccount'}</a></li>

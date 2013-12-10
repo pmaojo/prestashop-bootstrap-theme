@@ -25,7 +25,7 @@
 
 <!-- MODULE Block specials -->
 <div id="special_block_right" class="block products_block exclusive blockspecials">
-	<p class="title_block"><a href="{$link->getPageLink('prices-drop')}" title="{l s='Specials' mod='blockspecials'}">{l s='Specials' mod='blockspecials'}</a></p>
+	<p class="panel-heading"><a href="{$link->getPageLink('prices-drop')}" title="{l s='Specials' mod='blockspecials'}">{l s='Specials' mod='blockspecials'}</a></p>
 	<div class="block_content">
 
 {if $special}

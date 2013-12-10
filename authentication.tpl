@@ -159,8 +159,8 @@ $(function(){ldelim}
 	</div>
 	{/if}-->
 
-	<div class="row-fluid">
-		<div class="span6 well">
+	<div class="row">
+		<div class="col-md-6 well">
 			<h3>{l s='Create your account'}</h3>
 			<form action="{$link->getPageLink('authentication', true)}" method="post" id="user-create-form" class="">
 				<p>{l s='Enter your e-mail address to create an account'}.</p>
@@ -178,7 +178,7 @@ $(function(){ldelim}
 				</div>
 			</form>
 		</div>
-		<div class="span6 well">
+		<div class="col-md-6 well">
 			<h3>{l s='Already registered?'}</h3>
 			<form action="{$link->getPageLink('authentication', true)}" method="post">
 			    <div class="control-group">
@@ -390,8 +390,8 @@ $(function(){ldelim}
 	{/literal}
 	</script>
 
-	<div class="row-fluid">
-		<div class="span12 well">
+	<div class="row">
+		<div class="col-md-12 well">
 		<form action="{$link->getPageLink('authentication', true)}" method="post" id="new-account-register" class="">
 		    <fieldset>
 		      <div id="legend" class="">

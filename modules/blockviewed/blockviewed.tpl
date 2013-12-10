@@ -25,7 +25,7 @@
 
 <!-- Block Viewed products -->
 <div id="viewed-products_block_left" class="block products_block">
-	<p class="title_block">{l s='Viewed products' mod='blockviewed'}</p>
+	<p class="panel-heading">{l s='Viewed products' mod='blockviewed'}</p>
 	<div class="block_content">
 		<ul class="products clearfix">
 			{foreach from=$productsViewedObj item=viewedProduct name=myLoop}

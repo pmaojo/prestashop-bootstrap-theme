@@ -33,7 +33,7 @@
 
 {include file="$tpl_dir./errors.tpl"}
 {if !$nbProducts}
-	<p class="warning">
+	<p class="alert alert-warning">
 		{if isset($search_query) && $search_query}
 			{l s='No results found for your search'}&nbsp;"{if isset($search_query)}{$search_query|escape:'htmlall':'UTF-8'}{/if}"
 		{elseif isset($search_tag) && $search_tag}
@@ -43,7 +43,7 @@
 		{/if}
 	</p>
 {else}
-	<h4 class="nbresult"><span class="big">{if $nbProducts == 1}{l s='%d result has been found.' sprintf=$nbProducts|intval}{else}{l s='%d results have been found.' sprintf=$nbProducts|intval}{/if}</span></h4>
+	<h4 class="alert alert-success"><span class="big">{if $nbProducts == 1}{l s='%d result has been found.' sprintf=$nbProducts|intval}{else}{l s='%d results have been found.' sprintf=$nbProducts|intval}{/if}</span></h4>
 	{include file="./product-compare.tpl"}
 	{if !isset($instantSearch) || (isset($instantSearch) && !$instantSearch)}
 	<div class="sortPagiBar clearfix">

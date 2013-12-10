@@ -25,8 +25,8 @@
 *}
 
 <!-- MODULE Block contact infos -->
-<div id="block_contact_infos" class="span3 offset0">
-	<p class="title_block">{l s='Contact us' mod='blockcontactinfos'}</p>
+<div id="block_contact_infos" class="col-md-3 offset0">
+	<p class="panel-heading">{l s='Contact us' mod='blockcontactinfos'}</p>
 	<ul>
 		{if $blockcontactinfos_company != ''}<li><strong>{$blockcontactinfos_company|escape:'htmlall':'UTF-8'}</strong></li>{/if}
 		{if $blockcontactinfos_address != ''}<li><pre>{$blockcontactinfos_address|escape:'htmlall':'UTF-8'}</pre></li>{/if}

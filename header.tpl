@@ -58,11 +58,9 @@
 	<link href="{$css_uri}" rel="stylesheet" type="text/css" media="{$media}" />
 	{/foreach}
 {/if}
-{if isset($js_files)}
-	{foreach from=$js_files item=js_uri}
-	<script type="text/javascript" src="{$js_uri}"></script>
-	{/foreach}
-{/if}
+<link rel="STYLESHEET" type="text/css" href="./themes/prestashop-bootstrap-theme/css/bootstrap.min.css"></link>
+<link rel="STYLESHEET" type="text/css" href="./themes/prestashop-bootstrap-theme/css/global.css"></link> 
+
 		{$HOOK_HEADER}
 	</head>
 	
@@ -73,26 +71,25 @@
 			<p>{l s='You cannot place a new order from your country.'} <span class="bold">{$geolocation_country}</span></p>
 		</div>
 		{/if}
-		<div id="page" class="container-fluid" style="padding-top:20px;">
+		<div id="page" class="container" style="padding-top:20px;">
 
 			<!-- Header -->
-			<div id="header" class="row-fluid">
-				<div class="span3">
-					<!--a id="header_logo" href="{$base_dir}" title="{$shop_name|escape:'htmlall':'UTF-8'}">
+			<div id="header" class="row">
+				<div class="col-md-3">
 						<img class="logo" src="{$logo_url}" alt="{$shop_name|escape:'htmlall':'UTF-8'}" {if $logo_image_width}width="{$logo_image_width}"{/if} {if $logo_image_height}height="{$logo_image_height}" {/if} />
-					</a-->
+	
 				</div>
-				<div class="span9">
+				<div class="col-md-9">
 					{$HOOK_TOP}
 				</div>
 			</div>
 
-			<div id="columns" class="row-fluid">
+			<div id="columns" class="row">
 				<!-- Left -->
-				<div id="left_column" class="span3">
+				<div id="left_column" class="col-md-3">
 					{$HOOK_LEFT_COLUMN}
 				</div>
 
 				<!-- Center -->
-				<div id="center_column" class="span6">
+				<div id="center_column" class="col-md-6">
 	{/if}

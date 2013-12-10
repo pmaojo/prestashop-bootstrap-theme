@@ -176,12 +176,12 @@ var fieldRequired = '{l s='Please fill in all required fields, then save the cus
 		{if $have_image}
 			<span id="view_full_size">
 				<img src="{$link->getImageLink($product->link_rewrite, $cover.id_image, 'large_default')}" {if $jqZoomEnabled}class="jqzoom" alt="{$link->getImageLink($product->link_rewrite, $cover.id_image, 'thickbox_default')}"{else} title="{$product->name|escape:'htmlall':'UTF-8'}" alt="{$product->name|escape:'htmlall':'UTF-8'}" {/if} id="bigpic" width="{$largeSize.width}" height="{$largeSize.height}" />
-				<span class="span_link span8">{l s='View full size'}</span>
+				<span class="col-md-8">{l s='View full size'}</span>
 			</span>
 		{else}
 			<span id="view_full_size">
 				<img src="{$img_prod_dir}{$lang_iso}-default-large_default.jpg" id="bigpic" alt="" title="{$product->name|escape:'htmlall':'UTF-8'}" width="{$largeSize.width}" height="{$largeSize.height}" />
-				<span class="span_link span8">{l s='View full size'}</span>
+				<span class="col-md-8">{l s='View full size'}</span>
 			</span>
 		{/if}
 		</div>
@@ -364,7 +364,7 @@ var fieldRequired = '{l s='Please fill in all required fields, then save the cus
 			{if $product->show_price AND !isset($restricted_country_mode) AND !$PS_CATALOG_MODE}
 
 			{if $product->online_only}
-			<p class="online_only">{l s='Online only'}</p>
+			<p class="label label-info">{l s='Online only'}</p>
 			{/if}
 
 			<div class="price">

@@ -27,16 +27,23 @@
 				</div>
 
 <!-- Right -->
-				<div id="right_column" class="span3">
+				<div id="right_column" class="col-md-3">
 					{$HOOK_RIGHT_COLUMN}
 				</div>
 			</div>
 
 <!-- Footer -->
-			<div id="footer" class="row-fluid">
+			<div id="footer" class="row">
 				{$HOOK_FOOTER}
 			</div>
 		</div>
 	{/if}
-	</body>
+
+	{if isset($js_files)}
+	{foreach from=$js_files item=js_uri}
+	<script type="text/javascript" src="{$js_uri}"></script>
+	{/foreach}
+{/if}
+	<script type="text/javascript" src="{$js_uri}bootstrap.min.js"></script>
+		</body>
 </html>

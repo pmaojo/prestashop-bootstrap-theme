@@ -94,11 +94,11 @@
 		{/if}
 
 		{if $products}
-		<div class="row-fluid">
-			<div class="span6">
+		<div class="row">
+			<div class="col-md-6">
 			{include file="$tpl_dir./pagination.tpl"}
 			</div>
-			<div class="span6">
+			<div class="col-md-6">
 			{include file="./product-sort.tpl"}
 			</div>
 		</div>
@@ -124,6 +124,6 @@
 			</div-->
 		{/if}
 	{elseif $category->id}
-		<p class="warning">{l s='This category is currently unavailable.'}</p>
+		<p class="text-warning">{l s='This category is currently unavailable.'}</p>
 	{/if}
 {/if}
